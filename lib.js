@@ -38,8 +38,8 @@ var cellH = 18;
 var b1, b2, tileX1, tileY1, tileX2, tileY2;
 
 function applySettings() {
-	cellW *= opt.zoom;
-	cellH *= opt.zoom;
+	cellW = 10 * opt.zoom;
+	cellH = 18 * opt.zoom;
 	opt.fontSize *= opt.zoom;
 	offsetX = -(160 * opt.zoom * offset_coordX * 4);
 	offsetY = -(144 * opt.zoom * -offset_coordY * 4);
@@ -623,7 +623,7 @@ function renderTile(tx, ty, content, color, bgcolor, cell_props, char, writabili
 			if(isValidSpecialSymbol(cCode) && !(isHalfShard && !isBold)) {
 				drawBlockChar(cCode, ctx, char_offX, char_offY, cellW, cellH);
 			} else if(chr != "\u0020" && chr != "\u00a0") {
-				ctx.fillText(chr, char_offX, char_offY + textYOffset);
+				ctx.fillText(chr, Math.floor(char_offX), Math.floor(char_offY + textYOffset));
 			}
 		}
 	}
