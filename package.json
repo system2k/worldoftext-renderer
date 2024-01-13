@@ -1,0 +1,9 @@
+{
+	"name": "wot-renderer",
+	"description": "World of Text Renderer",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {
+		"canvas": "2.10.2"
+	}
+}
